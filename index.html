@@ -15,6 +15,7 @@
 
   <div id="secretLayer">
     <button class="secret secret-angel" id="secretAngel" title="קלף זהב סודי">😇</button>
+    <button class="secret secret-hoke hidden" id="secretHoke" title="הוק מגיע">🐹</button>
     <button class="secret secret-joy hidden" id="secretJoy" title="ג׳וי מגיעה">🐕</button>
   </div>
 
@@ -26,6 +27,7 @@
       <a href="#quiz">שאלון</a>
       <a href="#crew">החבורה</a>
       <a href="#gold">קלפי זהב</a>
+      <a href="#hoke">משחק הוק</a>
       <a href="#stats">סטטיסטיקות</a>
     </nav>
   </header>
@@ -93,20 +95,57 @@
 
     <section class="section" id="crew">
       <div class="section-head reveal">
-        <p class="eyebrow">החבורה הרגילה</p>
-        <h2>אלו שאפשר לצאת בחידון ולקבל בקטלוג</h2>
-        <p>רק החתולים הרגילים מופיעים פה. קלפי הזהב נשמרים לטאב הנפרד ולציד סודות.</p>
+        <p class="eyebrow">החבורה</p>
+        <h2>הרגילים + ה־OG באותו קטלוג</h2>
+        <p>הרגילים מופיעים קודם, ומתחתיהם יש קו הפרדה קטן עם שני חתולי OG כסופים. הם עדיין יכולים לצאת בחידון — פשוט יותר נדיר.</p>
       </div>
       <div class="cards-grid" id="regularGrid"></div>
+      <div class="og-divider reveal" id="og">
+        <span class="divider-line"></span>
+        <div class="og-divider-copy">
+          <p class="eyebrow silver-title">OG כסופים</p>
+          <p>כחולית ופוף היו מהראשונים של הממלכה. הם ביחד עם כולם, רק עם הילה כסופה וקצת יותר אגו היסטורי.</p>
+        </div>
+        <span class="divider-line"></span>
+      </div>
+      <div class="silver-grid" id="silverGrid"></div>
     </section>
 
     <section class="section" id="gold">
       <div class="section-head reveal">
         <p class="eyebrow">קלפי זהב</p>
-        <h2>גלו את שלושת קלפי המלאכים כדי למצוא את אלוהים</h2>
+        <h2>מיצ, כתם, חבריקה... ואז ג׳וי</h2>
         <p>בטאב הזה יופיעו קלפי הזהב רק אחרי שתמצאו אותם. עד אז? הם פשוט נעולים ושותקים.</p>
       </div>
       <div class="gold-grid" id="goldGrid"></div>
+    </section>
+
+
+    <section class="section" id="hoke">
+      <div class="section-head reveal">
+        <p class="eyebrow">משחק הוק</p>
+        <h2>ניחוש השיר של השרקן הנסיך</h2>
+        <p>אחרי שכתם נאסף, יופיע אימוג׳י שרקן מרחף. לחצו עליו כדי לפתוח את הקלף של הוק ואת משחק ניחוש השיר.</p>
+      </div>
+      <div class="hoke-game-card reveal hidden" id="hokeGameCard">
+        <div class="result-grid">
+          <div class="result-image-wrap"><img src="images/hoke.png" alt="הוק"></div>
+          <div>
+            <p class="eyebrow small">הוק</p>
+            <h3>שרקן נסיך</h3>
+            <p>הוק היה השרקן האהוב, אהב להתחבא והיה חברו הטוב של ג׳וי. עכשיו הוא מפעיל מבחן מוזיקלי לאנשים רציניים מדי — והקלף שלו מוצג ממש כאן.</p>
+            <audio controls id="hokeAudio"><source src="audio/hoke-song.mp4" type="audio/mp4">הדפדפן שלך לא תומך בהשמעת אודיו.</audio>
+            <label class="song-label" for="songGuess">מה שם השיר?</label>
+            <input id="songGuess" class="song-input" placeholder="הקלד/י את שם השיר..." />
+            <div class="quiz-actions compact">
+              <button class="btn primary" type="button" id="submitSongGuess">שלח תשובה</button>
+              <button class="btn secondary" type="button" id="openHokeCard">פתח קלף הוק</button>
+            </div>
+            <p class="song-feedback" id="songFeedback"></p>
+          </div>
+        </div>
+      </div>
+      <div class="hoke-locked-card reveal" id="hokeLockedCard"><div><div class="lock-badge">🔒</div><h3>משחק נעול</h3></div></div>
     </section>
 
     <section class="section" id="stats">
