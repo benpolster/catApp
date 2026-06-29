@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ממלכת החתולים | איזה חתול את/ה?</title>
+  <meta name="description" content="שאלון חתולים הזוי, קלפי זהב סודיים, ודמויות מצוירות לפי החבורה האגדית." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div id="secretLayer">
+    <button class="secret secret-angel" id="secretAngel" title="קלף זהב סודי">😇</button>
+    <button class="secret secret-joy hidden" id="secretJoy" title="ג׳וי מגיעה">🐕</button>
+  </div>
+
+  <header class="site-header">
+    <a href="#home" class="brand">👑 ממלכת החתולים</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#home">בית</a>
+      <a href="#quiz">שאלון</a>
+      <a href="#crew">החבורה</a>
+      <a href="#gold">קלפי זהב</a>
+      <a href="#stats">סטטיסטיקות</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">לא אתר. מוסד.</p>
+        <h1>איזה חתול<br>ממש לא יציב<br>את/ה היום?</h1>
+        <p class="hero-text">
+          ברוכים הבאים לממלכת החתולים: שאלון לא ענייני, קלפי זהב סודיים, ארנבת מיותרת,
+          וכלבה אחת שהיא אלוהים בכבודו ובעצמו.
+        </p>
+        <div class="hero-actions">
+          <a href="#quiz" class="btn primary">תנו לי אבחון מפוקפק</a>
+          <a href="#gold" class="btn secondary">איפה הקלפים הסודיים?</a>
+        </div>
+      </div>
+
+      <div class="hero-card reveal">
+        <div class="hero-image-wrap">
+          <img id="dailyImage" src="images/bagira.png" alt="קלף יומי" />
+        </div>
+        <div class="hero-card-body">
+          <p class="eyebrow small">קלף היום</p>
+          <h2 id="dailyName">בגירה</h2>
+          <p id="dailyText">היום את/ה במוד של קנאה, פינוקים, וחוסר רצון לצאת מהבית.</p>
+          <button class="btn primary full" id="dailyBtn">תזרקו עליי דמות אחרת</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quiz">
+      <div class="section-head reveal">
+        <p class="eyebrow">שאלון לא תקין</p>
+        <h2>איזה חתול את/ה?</h2>
+        <p>4 תשובות בכל שאלה, בלי היגיון, בלי רמזים, ובלי שום קשר לחתולים. פשוט לבחור את השטות שמרגישה לך נכונה.</p>
+      </div>
+
+      <form class="quiz-card reveal" id="quizForm">
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <div id="questions"></div>
+        <div class="quiz-actions">
+          <button type="button" class="btn secondary" id="resetQuiz">איפוס</button>
+          <button type="submit" class="btn primary">תנו פסק דין</button>
+        </div>
+      </form>
+
+      <div class="result-card hidden" id="resultCard">
+        <div class="result-grid">
+          <div class="result-image-wrap"><img id="resultImage" src="images/bagira.png" alt="תוצאה" /></div>
+          <div>
+            <p class="eyebrow small">התוצאה שלך</p>
+            <h3 id="resultName"></h3>
+            <p id="resultDesc"></p>
+            <div class="tags" id="resultTags"></div>
+            <div class="quiz-actions compact">
+              <button type="button" class="btn primary" id="copyResult">העתיקי אבחון</button>
+              <button type="button" class="btn secondary" id="openResultCard">פתחי כקלף</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="crew">
+      <div class="section-head reveal">
+        <p class="eyebrow">החבורה הרגילה</p>
+        <h2>אלו שאפשר לצאת בחידון ולקבל בקטלוג</h2>
+        <p>רק החתולים הרגילים מופיעים פה. קלפי הזהב נשמרים לטאב הנפרד ולציד סודות.</p>
+      </div>
+      <div class="cards-grid" id="regularGrid"></div>
+    </section>
+
+    <section class="section" id="gold">
+      <div class="section-head reveal">
+        <p class="eyebrow">קלפי זהב</p>
+        <h2>גלו את שלושת קלפי המלאכים כדי למצוא את אלוהים</h2>
+        <p>בטאב הזה יופיעו קלפי הזהב רק אחרי שתמצאו אותם. עד אז? הם פשוט נעולים ושותקים.</p>
+      </div>
+      <div class="gold-grid" id="goldGrid"></div>
+    </section>
+
+    <section class="section" id="stats">
+      <div class="section-head reveal">
+        <p class="eyebrow">סטטיסטיקות</p>
+        <h2>מי יוצא הכי הרבה?</h2>
+        <p>רק התוצאות של החידון נשמרות, כדי שיהיה אפשר להכחיש הכל אחר כך.</p>
+      </div>
+      <div class="stats-card reveal" id="statsCard"></div>
+    </section>
+  </main>
+
+  <footer class="footer">נעשה באהבה, בטמטום, וביראת כבוד מג׳וי.</footer>
+
+  <div class="modal hidden" id="cardModal">
+    <div class="modal-backdrop" data-close="1"></div>
+    <div class="modal-panel">
+      <button class="modal-close" id="closeModal">×</button>
+      <img id="modalImage" src="images/bagira.png" alt="קלף" />
+      <div class="modal-body">
+        <p class="eyebrow small" id="modalType">קלף</p>
+        <h3 id="modalName"></h3>
+        <p id="modalLore"></p>
+        <div class="tags" id="modalTags"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
